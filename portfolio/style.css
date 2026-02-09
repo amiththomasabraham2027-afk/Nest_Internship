@@ -1,0 +1,472 @@
+:root {
+    --black: #000000;
+    --near-black: #111111;
+    --white: #FAFAFA;
+    --gray: #666666;
+    --accent: #FF3B30;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    background-color: var(--white);
+    color: var(--near-black);
+    line-height: 1.8;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+/* Gradient Canvas Background */
+#gradient-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+/* Navigation */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 3rem;
+    z-index: 100;
+    mix-blend-mode: difference;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: opacity var(--transition);
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+/* Social Links */
+.social-vertical {
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 100;
+}
+
+.social-vertical a {
+    color: var(--near-black);
+    font-size: 1.1rem;
+    transition: color var(--transition);
+}
+
+.social-vertical a:hover {
+    color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--black);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-name {
+    font-size: clamp(5rem, 15vw, 12rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 3rem;
+}
+
+.hero-name span {
+    display: block;
+}
+
+.hero-image {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    width: 40vw;
+    max-width: 600px;
+    height: 80vh;
+    background: url('hero_portrait.png') center/cover no-repeat;
+    mix-blend-mode: lighten;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+/* Intro Section */
+.intro {
+    background: var(--near-black);
+    color: var(--white);
+    padding: 15rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.intro-text {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 900px;
+}
+
+.intro-text .accent {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* Skills Section */
+.skills {
+    padding: 10rem 0;
+    background: var(--white);
+}
+
+.skill-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.skill-item:first-child {
+    border-top: 1px solid #E0E0E0;
+}
+
+.skill-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--near-black);
+    line-height: 1;
+}
+
+.skill-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.skill-content p {
+    color: var(--gray);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Education Section */
+.education {
+    padding: 10rem 0;
+    background: var(--white);
+}
+
+.education-card {
+    max-width: 700px;
+    padding: 3rem 0;
+    border-top: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.education-year {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.education-card h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.education-card p {
+    font-size: 1.1rem;
+    color: var(--gray);
+    margin-bottom: 0.3rem;
+}
+
+.education-detail {
+    font-size: 0.95rem !important;
+}
+
+/* Projects Section */
+.projects {
+    padding: 10rem 0;
+    background: var(--near-black);
+    color: var(--white);
+}
+
+.section-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    margin-bottom: 5rem;
+    letter-spacing: -0.03em;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+}
+
+.project-card {
+    padding: 2.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform var(--transition);
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.project-card p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.project-tags {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.project-tags span {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Activities Section */
+.activities {
+    padding: 10rem 0;
+    background: var(--white);
+}
+
+.activities-list {
+    max-width: 800px;
+}
+
+.activity-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.activity-item:first-child {
+    border-top: 1px solid #E0E0E0;
+}
+
+.activity-item p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--gray);
+}
+
+/* Contact Section */
+.contact {
+    padding: 15rem 0;
+    background: var(--black);
+    color: var(--white);
+}
+
+.contact-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    margin-bottom: 3rem;
+    letter-spacing: -0.03em;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 500;
+    transition: color var(--transition);
+    letter-spacing: -0.01em;
+}
+
+.contact-links a:hover {
+    color: var(--accent);
+}
+
+/* Footer */
+footer {
+    background: var(--black);
+    padding: 3rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+.fade-in-delay {
+    animation: fadeIn 1.2s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.fade-in-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .nav {
+        padding: 1.5rem 2rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .social-vertical {
+        right: 2rem;
+        bottom: 2rem;
+    }
+
+    .hero-name {
+        padding: 0 2rem;
+        font-size: clamp(3.5rem, 12vw, 8rem);
+    }
+
+    .hero-image {
+        width: 60vw;
+        right: 5%;
+    }
+
+    .container {
+        padding: 0 2rem;
+    }
+
+    .intro {
+        padding: 8rem 0;
+    }
+
+    .skills,
+    .education,
+    .projects,
+    .activities {
+        padding: 6rem 0;
+    }
+
+    .skill-item {
+        grid-template-columns: 80px 1fr;
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+
+    .skill-number {
+        font-size: 3rem;
+    }
+
+    .skill-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        padding: 8rem 0;
+    }
+}
