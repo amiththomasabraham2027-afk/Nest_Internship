@@ -63,3 +63,53 @@ if (canvas) {
 } else {
     console.error('Canvas element #gradient-canvas not found!');
 }
+
+// Initialize Shuffle Text Animation for Name
+import('./ShuffleText.js')
+    .then(module => {
+        const { ShuffleText } = module;
+
+        // Animate each word of the name
+        document.querySelectorAll('.shuffle-name').forEach((nameElement, index) => {
+            new ShuffleText(nameElement, {
+                shuffleDirection: 'right',
+                duration: 0.4,
+                shuffleTimes: 2,
+                ease: 'power3.out',
+                stagger: 0.04,
+                animationMode: 'evenodd',
+                threshold: 0.1,
+                triggerOnce: false,
+                triggerOnHover: true,
+                loop: false
+            });
+        });
+
+        console.log('Shuffle text animation initialized!');
+    })
+    .catch(err => {
+        console.error('Failed to load shuffle animation:', err);
+    });
+
+// Initialize Scroll Reveal Animation
+import('./ScrollReveal.js')
+    .then(module => {
+        const { ScrollReveal } = module;
+
+        // Apply scroll reveal to intro text
+        const introText = document.querySelector('p.scroll-reveal');
+        if (introText) {
+            new ScrollReveal(introText, {
+                enableBlur: true,
+                baseOpacity: 0.2,
+                baseRotation: 2,
+                blurStrength: 3,
+                rotationEnd: 'bottom bottom',
+                wordAnimationEnd: 'bottom bottom'
+            });
+            console.log('Scroll reveal animation initialized!');
+        }
+    })
+    .catch(err => {
+        console.error('Failed to load scroll reveal:', err);
+    });

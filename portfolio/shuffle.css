@@ -1,0 +1,14 @@
+.shuffle-char {
+    display: inline-block;
+    position: relative;
+}
+
+.shuffle-name {
+    display: inline-block;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.shuffle-name:hover {
+    opacity: 0.8;
+}
