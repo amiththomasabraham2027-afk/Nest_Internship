@@ -64,31 +64,28 @@ if (canvas) {
     console.error('Canvas element #gradient-canvas not found!');
 }
 
-// Initialize Shuffle Text Animation for Name
-import('./ShuffleText.js')
+// Initialize Decrypted Text Animation for Name
+import('./DecryptedText.js')
     .then(module => {
-        const { ShuffleText } = module;
+        const { DecryptedText } = module;
 
         // Animate each word of the name
         document.querySelectorAll('.shuffle-name').forEach((nameElement, index) => {
-            new ShuffleText(nameElement, {
-                shuffleDirection: 'right',
-                duration: 0.4,
-                shuffleTimes: 2,
-                ease: 'power3.out',
-                stagger: 0.04,
-                animationMode: 'evenodd',
-                threshold: 0.1,
-                triggerOnce: false,
-                triggerOnHover: true,
-                loop: false
+            new DecryptedText(nameElement, {
+                speed: 50,
+                maxIterations: 15,
+                sequential: true,
+                revealDirection: 'start',
+                useOriginalCharsOnly: false,
+                characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+                animateOn: 'both' // Animate on scroll AND hover
             });
         });
 
-        console.log('Shuffle text animation initialized!');
+        console.log('Decrypted text animation initialized!');
     })
     .catch(err => {
-        console.error('Failed to load shuffle animation:', err);
+        console.error('Failed to load decrypted text animation:', err);
     });
 
 // Initialize Scroll Reveal Animation
