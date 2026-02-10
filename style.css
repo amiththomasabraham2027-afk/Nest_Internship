@@ -104,7 +104,7 @@ body {
 
 .hero-content {
     position: relative;
-    z-index: 10;
+    z-index: 25;
 }
 
 .hero-name {
@@ -126,16 +126,17 @@ body {
 
 .hero-image {
     position: absolute;
-    top: 50%;
-    right: 10%;
+    top: 5%;
+    right: -5%;
     transform: translateY(-50%);
     width: 40vw;
     max-width: 600px;
     height: 80vh;
-    background: url('hero_portrait.png') center/cover no-repeat;
-    mix-blend-mode: lighten;
-    opacity: 0.4;
-    z-index: 1;
+    background: url('assets/profile.jpg.png') center/contain no-repeat;
+    background-color: transparent;
+    mix-blend-mode: normal;
+    opacity: 1;
+    z-index: 5;
 }
 
 /* Container */
