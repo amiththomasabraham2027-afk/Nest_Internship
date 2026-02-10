@@ -1,5 +1,5 @@
-// Import OGL from node_modules
-import { Renderer, Program, Mesh, Triangle } from './node_modules/ogl/dist/ogl.mjs';
+// Import OGL from CDN
+import { Renderer, Program, Mesh, Triangle } from 'https://cdn.jsdelivr.net/npm/ogl@1.0.11/dist/ogl.mjs';
 
 const MAX_COLORS = 8;
 

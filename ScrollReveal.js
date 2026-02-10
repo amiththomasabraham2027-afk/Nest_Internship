@@ -1,8 +1,8 @@
 // GSAP Scroll Reveal Animation
 // Converted from React to Vanilla JS
 
-import { gsap } from './node_modules/gsap/index.js';
-import { ScrollTrigger } from './node_modules/gsap/ScrollTrigger.js';
+import gsap from 'https://cdn.skypack.dev/gsap';
+import ScrollTrigger from 'https://cdn.skypack.dev/gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
